@@ -2,7 +2,26 @@ import Tweets
 import csv
 import json
 
+#Este metodo ya esta en jsonToMap.py
+def read_file(filename):
+    with open(filename) as f:
+        data = json.load(f)
+    return data
+
+def leercsv(filename):
+	datos = []
+	with open(filename, "r") as csvfile:
+		spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
+		for row in spamreader:
+			datos.append([row[0],row[1]])
+	return datos
+
 tweets = Tweets.read_json_file("results_clean.json")
+
+customdictionary = read_file("diccionario_valores.json")
+bigdictionary = read_file("words_spain.json")
+palabras = bigdictionary.update(customdictionary)
+
 def categorizar(tweets): #recibe arreglo de tweets y un csv con los tweets id y su su valor; exporta un diccionario en json con las palabras y sus valores positivos o negativos 
 	tweetsandvalues = leercsv('tweetsvalues.csv');
 	ids = []
@@ -10,27 +29,26 @@ def categorizar(tweets): #recibe arreglo de tweets y un csv con los tweets id y 
 	for rows in tweetsandvalues:
 		values.append(rows[1])
 		ids.append(rows[0])
-	palabras = {} #diccionario con palabras y valor {string : dict(int,int)}
+	diccionario = {} #diccionario con palabras y valor {string : dict(int,int)}
 	for tweet in tweets:
 		#Primero determinamos el valor del tweet
 		#print(ids)
 		value = values[ids.index(str(tweet.id))]
 
 		for word in (tweet.text.split(" ")):
-	 		if word not in palabras:
+	 		if word not in diccionario:
 	 			palabras[word] = {"p":0,"n":0,"-":0} #Crea una nueva palabra en el diccionario
 	 		#Ahora añade uno al valor correspontiente
 	 		if value == "p":
-	 			palabras[word]["p"] = palabras[word]["p"] + 1   
+	 			diccionario[word]["p"] = diccionario[word]["p"] + 1   
 	 		elif value == "n":
-	 			palabras[word]["n"] = palabras[word]["n"] + 1   
+	 			diccionario[word]["n"] = diccionario[word]["n"] + 1   
 	 		else:
-	 			palabras[word]["-"] = palabras[word]["-"] + 1  
+	 			diccionario[word]["-"] = diccionario[word]["-"] + 1  
 	with open("diccionario_valores.json", 'w') as file:
 		file.write(json.dumps(palabras))
 
 def analizarTweet(tweet):
-	palabras = read_file("diccionario_valores.json")
 	polaridadtotal = 0
 
 	sentence = tweet.text.split(" ")
@@ -70,7 +88,6 @@ def analizarTweet(tweet):
 	return  valor
 
 def analizarTweet2(tweet):
-	palabras = read_file("diccionario_valores.json")
 	polaridadtotal = 0
 	polaridadpositiva = 0
 	polaridadnegativa = 0
@@ -102,18 +119,7 @@ def analizador(tweets):
 		print (str(tweet.id) +" | " + str(analizarTweet(tweet))+ " | "+ str(analizarTweet2(tweet)))
 		print()
 
-#Este metodo ya esta en jsonToMap.py
-def read_file(filename):
-    with open(filename) as f:
-        data = json.load(f)
-    return data
 
-def leercsv(filename):
-	datos = []
-	with open(filename, "r") as csvfile:
-		spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
-		for row in spamreader:
-			datos.append([row[0],row[1]])
-	return datos
-
-analizador(tweets)
+#analizador(tweets)
+print(bigdictionary["amador"])
+print(customdictionary["amador"])
