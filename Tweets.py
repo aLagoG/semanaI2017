@@ -9,7 +9,7 @@ class Tweet:
     text = ""
     creation_date = None
     id = -1
-    user = None
+    user = ""
 
     def __init__(self, data):
         if 'emoji' in data:
@@ -21,18 +21,14 @@ class Tweet:
         if 'id' in data:
             self.id = data['id']
         if 'user' in data:
-            self.user = User(data['user'])
+            if isinstance(data['user'], dict):
+                if 'user_name' in data['user']:
+                    self.user = data['user']['user_name']
+            else:
+                self.user = data['user']
 
-
-class User:
-    username = ''
-    id = -1
-
-    def __init__(self, data):
-        if 'id' in data:
-            self.id = data['id']
-        if 'user_name' in data:
-            self.username = data['user_name']
+    def to_dict(self):
+        return {'id': self.id, 'created_at': self.creation_date, 'user': self.user, 'text': self.text, 'emoji': self.emoji}
 
 
 def read_json_file(filename):
@@ -43,5 +39,5 @@ def read_json_file(filename):
 
 def write_json_file(filename, data):
     with open(filename, 'w') as file:
-        file.write(json.dumps({'tweets': data}
-                              if isinstance(data, list) else data))
+        data = [x.to_dict() for x in data]
+        file.write(json.dumps({'tweets': data}))

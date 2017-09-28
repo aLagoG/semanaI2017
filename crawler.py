@@ -92,8 +92,7 @@ to_file = {"tweets": []}
 for tweet in searched_tweets:
     di = {}
     di['created_at'] = tweet._json['created_at']
-    di['user'] = {'id': tweet._json['user']['id'],
-                  'user_name': tweet._json['user']['screen_name']}
+    di['user'] = tweet._json['user']['screen_name']
     di['id'] = tweet._json['id']
     di['text'] = tweet._json['full_text']
     to_file["tweets"].append(di)
