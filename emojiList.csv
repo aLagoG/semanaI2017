@@ -1,0 +1,121 @@
+Nombre,emoji,Alegria,Amor,Sorpresa,Neutral,Verguenza,Aversion,Miedo,Tristeza,Colera
+grinning face:grinning:,😀,100,0,0,0,0,0,0,0,0
+smiling face with open mouth:smiley:,😃,100,0,10,0,0,0,0,0,0
+smiling face with open mouth & smiling eyes:smile:,😄,100,0,0,0,0,0,0,0,0
+grinning face with smiling eyes:grin:,😁,100,0,0,0,0,0,0,0,0
+smiling face with open mouth & closed eyes:laughing:,😆,100,0,0,0,0,0,0,0,0
+smiling face with open mouth & cold sweat:sweat_smile:,😅,100,0,0,0,20,0,0,0,0
+face with tears of joy:joy:,😂,100,0,0,0,0,0,0,0,0
+rolling on the floor laughing:rofl:,🤣,100,0,0,0,0,0,0,0,0
+smiling face:relaxed:,☺,100,0,0,20,0,0,0,0,0
+smiling face with smiling eyes:blush:,😊,100,20,0,0,0,0,0,0,0
+smiling face with halo:innocent:,😇,100,0,0,0,0,0,0,0,0
+slightly smiling face:slight_smile:,🙂,75,0,0,0,50,0,0,0,0
+upside-down face:upside_down:,🙃,75,0,0,0,0,0,0,0,0
+winking face:wink:,😉,75,25,0,0,0,0,0,0,0
+relieved face:relieved:,😌,60,0,0,40,0,0,0,0,0
+smiling face with heart-eyes:heart_eyes:,😍,50,100,0,0,0,0,0,0,0
+face blowing a kiss:kissing_heart:,😘,50,100,0,0,0,0,0,0,0
+kissing face:kissing:,😗,25,70,0,0,0,0,0,0,0
+kissing face with smiling eyes:kissing_smiling_eyes:,😙,50,80,0,0,0,0,0,0,0
+kissing face with closed eyes:kissing_closed_eyes:,😚,50,85,0,0,0,0,0,0,0
+face savouring delicious food:yum:,😋,90,0,0,0,0,0,0,0,0
+face with stuck-out tongue & winking eye:stuck_out_tongue_winking_eye:,😜,75,0,0,0,0,0,0,0,0
+face with stuck-out tongue & closed eyes:stuck_out_tongue_closed_eyes:,😝,75,0,0,0,20,0,0,0,0
+face with stuck-out tongue:stuck_out_tongue:,😛,70,0,0,10,0,0,0,0,0
+money-mouth face:money_mouth:,🤑,100,0,0,0,0,0,0,0,0
+hugging face:hugging:,🤗,60,30,0,0,0,0,0,0,0
+nerd face:nerd:,🤓,50,0,0,50,0,0,0,0,0
+smiling face with sunglasses:sunglasses:,😎,80,0,0,0,0,0,0,0,0
+clown face:clown:,🤡,20,0,0,70,0,0,0,0,0
+cowboy hat face:cowboy:,🤠,60,0,0,20,0,0,0,0,0
+smirking face:smirk:,😏,90,40,20,0,0,0,0,0,0
+unamused face:unamused:,😒,0,0,20,0,30,90,0,40,40
+disappointed face:disappointed:,😞,0,0,0,0,30,10,30,90,0
+pensive face:pensive:,😔,0,0,0,0,30,10,30,100,0
+worried face:worried:,😟,0,0,0,0,20,10,20,90,0
+confused face:confused:,😕,0,0,0,30,0,40,10,40,10
+slightly frowning face:slight_frown:,🙁,0,0,0,20,0,10,0,60,0
+frowning face:frowning2:,☹,0,0,0,10,0,10,0,50,0
+persevering face:persevere:,😣,0,0,10,0,40,80,50,40,0
+confounded face:confounded:,😖,0,0,0,0,20,80,0,0,0
+tired face:tired_face:,😫,0,0,0,0,0,75,0,0,0
+weary face:weary:,😩,0,0,0,0,0,80,0,20,0
+face with steam from nose:triumph:,😤,0,0,0,0,0,50,0,0,60
+angry face:angry:,😠,0,0,0,0,0,40,0,0,75
+pouting face:rage:,😡,0,0,0,0,0,75,0,0,100
+face without mouth:no_mouth:,😶,0,0,0,100,10,0,0,0,0
+neutral face:neutral_face:,😐,0,0,0,100,0,0,0,0,0
+expressionless face:expressionless:,😑,0,0,0,40,0,75,0,0,0
+hushed face:hushed:,😯,0,0,80,0,0,30,0,0,0
+frowning face with open mouth:frowning:,😦,0,0,20,0,0,30,0,80,0
+anguished face:anguished:,😧,0,0,40,0,0,30,0,75,0
+face with open mouth:open_mouth:,😮,0,0,100,0,0,0,0,0,0
+astonished face:astonished:,😲,40,0,100,0,0,0,0,0,0
+dizzy face:dizzy_face:,😵,0,0,0,50,0,75,0,0,0
+flushed face:flushed:,😳,0,0,0,0,100,0,,0,0
+face screaming in fear:scream:,😱,0,0,50,0,0,0,50,0,0
+fearful face:fearful:,😨,0,0,40,0,,0,75,0,0
+face with open mouth & cold sweat:cold_sweat:,😰,0,0,0,0,0,0,100,0,0
+crying face:cry:,😢,0,0,0,0,0,50,,100,
+disappointed but relieved face:disappointed_relieved:,😥,0,0,0,0,20,0,30,75,0
+drooling face:drooling_face:,🤤,10,10,0,50,0,0,0,0,0
+loudly crying face:sob:,😭,15,10,40,0,30,0,40,40,0
+face with cold sweat:sweat:,😓,0,0,0,0,30,0,40,20,0
+sleepy face:sleepy:,😪,0,0,0,0,40,0,0,30,0
+sleeping face:sleeping:,😴,0,0,0,100,0,0,0,0,0
+face with rolling eyes:rolling_eyes:,🙄,0,0,0,100,0,0,0,0,0
+thinking face:thinking:,🤔,0,0,0,100,0,0,0,0,0
+lying face:lying_face:,🤥,0,0,0,50,40,0,0,40,0
+grimacing face:grimacing:,😬,20,10,50,0,30,0,0,0,0
+zipper-mouth face:zipper_mouth:,🤐,0,0,0,60,0,0,0,0,0
+nauseated face:nauseated_face:,🤢,0,0,20,0,50,80,20,20,10
+sneezing face:sneezing_face:,🤧,0,0,0,50,0,0,0,0,0
+face with medical mask:mask:,😷,0,0,0,20,0,50,10,0,0
+face with thermometer:thermometer_face:,🤒,0,0,0,0,40,40,20,40,0
+face with head-bandage:head_bandage:,🤕,0,0,0,0,40,40,20,40,0
+smiling face with horns:smiling_imp:,😈,40,20,50,0,0,0,0,0,0
+angry face with horns:imp:,👿,0,0,0,0,20,30,0,0,80
+smiling cat face with open mouth:smiley_cat:,😺,30,40,0,0,0,0,0,0,0
+grinning cat face with smiling eyes:smile_cat:,😸,100,20,0,0,0,0,0,0,0
+cat face with tears of joy:joy_cat:,😹,100,30,0,0,0,0,0,0,0
+smiling cat face with heart-eyes:heart_eyes_cat:,😻,80,100,0,0,0,0,0,0,0
+cat face with wry smile:smirk_cat:,😼,80,0,0,10,0,0,0,0,10
+kissing cat face with closed eyes:kissing_cat:,😽,90,100,0,0,0,0,0,0,0
+weary cat face:scream_cat:,🙀,0,0,100,0,0,10,30,0,0
+crying cat face:crying_cat_face:,😿,0,0,0,0,0,0,0,100,0
+pouting cat face:pouting_cat:,😾,0,0,0,0,0,0,0,0,100
+raising hands:raised_hands:,🙌,80,20,10,0,0,0,0,0,0
+clapping hands:clap:, 👏 ,90,40,20,0,0,0,0,0,0
+folded hands:pray:, 🙏,40,40,0,90,0,0,20,0,0
+handshake:handshake:,🤝,30,10,0,100,0,0,0,0,0
+thumbs up:thumbsup:,👍,90,20,0,40,0,0,0,0,0
+thumbs down:thumbsdown:,👎,0,0,10,0,30,80,0,10,50
+oncoming fist:punch:,👊,0,0,0,0,0,30,0,0,100
+raised fist:fist:,✊ ,0,0,0,0,0,10,0,0,100
+left-facing fist:left_facing_fist:,🤛,0,0,0,0,0,0,0,0,100
+right-facing fist:right_facing_fist:,🤜,0,0,0,0,0,0,0,0,100
+crossed fingers:fingers_crossed:, ✌,20,30,0,0,0,0,60,0,0
+victory hand:v:,🤘 ,100,0,10,0,0,0,0,0,0
+sign of the horns:metal:,🤘,100,60,0,0,0,0,0,0,0
+OK hand:ok_hand:,👌,80,20,0,0,0,0,0,0,0
+backhand index pointing left:point_left:,👈,0,0,0,100,0,10,0,0,0
+backhand index pointing right:point_right:,👉,0,0,0,100,0,10,0,0,0
+backhand index pointing up:point_up_2:,👆,0,0,0,100,0,0,0,0,0
+backhand index pointing down:point_down:,👇,0,0,0,100,0,0,0,0,0
+index pointing up:point_up:,☝,0,0,0,100,0,0,0,0,0
+raised hand:raised_hand:,✋,0,0,0,100,0,0,0,0,0
+raised back of hand:raised_back_of_hand:,🤚,0,0,0,100,0,0,0,0,0
+raised hand with fingers splayed:hand_splayed:,🖐,0,0,0,100,0,0,0,0,0
+vulcan salute:vulcan:,🖖,0,0,0,100,0,0,0,0,0
+waving hand:wave:,👋,0,0,0,100,0,0,0,0,0
+call me hand:call_me:,🤙,0,0,0,100,0,0,0,0,0
+flexed biceps:muscle:,💪,20,0,0,0,0,0,0,0,0
+middle finger:middle_finger:,🖕,0,0,0,0,0,0,0,0,100
+eyes:eyes:,👀,0,0,100,0,0,0,0,0,0
+woman facepalming:woman_facepalming:,🤦‍♀,0,0,0,0,100,100,0,80,0
+man shrugging:man_shrugging:,🤷‍♂,0,0,0,100,0,0,0,0,0
+person gesturing NO:person_gesturing_no:,🙅,0,0,0,0,0,100,0,0,0
+red heart:heart:,❤,90,100,0,0,0,0,0,0,0
+broken heart:broken_heart:,💔,0,0,0,0,0,0,0,100,0
+fire:fire:,🔥,0,0,0,100,0,0,0,0,0

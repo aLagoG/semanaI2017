@@ -7,9 +7,11 @@ class Tweet:
 
     emoji = []
     text = ""
+    text_clean = ""
     creation_date = None
     id = -1
     user = ""
+    polarity = 0
 
     def __init__(self, data):
         if 'emoji' in data:
@@ -26,9 +28,16 @@ class Tweet:
                     self.user = data['user']['user_name']
             else:
                 self.user = data['user']
+        if 'text_clean' in data:
+            self.text_clean = data['text_clean']
+        if 'polarity' in data:
+            self.polarity = data['polarity']
+        
+    def set_polarity(self, data):
+        self.polarity = 1 if data == 'p' else -1 if data == 'n' else 0
 
     def to_dict(self):
-        return {'id': self.id, 'created_at': self.creation_date, 'user': self.user, 'text': self.text, 'emoji': self.emoji}
+        return {'id': self.id, 'created_at': self.creation_date, 'user': self.user, 'text': self.text, 'text_clean': self.text_clean, 'emoji': self.emoji, 'polarity': self.polarity}
 
 
 def read_json_file(filename):

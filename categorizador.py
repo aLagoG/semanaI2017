@@ -11,7 +11,7 @@ def read_file(filename):
 def leercsv(filename):
 	datos = []
 	with open(filename, "r") as csvfile:
-		spamreader = csv.reader(csvfile, delimiter=',', quotechar='|')
+		spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
 		for row in spamreader:
 			datos.append([row[0],row[1]])
 	return datos
