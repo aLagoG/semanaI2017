@@ -39,3 +39,9 @@ def read_json_file(filename):
     with open(filename, 'r') as file:
         data = json.load(file)['tweets']
     return [Tweet(obj) for obj in data]
+
+
+def write_json_file(filename, data):
+    with open(filename, 'w') as file:
+        file.write(json.dumps({'tweets': data}
+                              if isinstance(data, list) else data))
