@@ -1,5 +1,6 @@
 import Tweets
 import csv
+import json
 
 tweets = Tweets.read_json_file("results_clean.json")
 def categorizar(tweets): #recibe arreglo de tweets
@@ -24,8 +25,9 @@ def categorizar(tweets): #recibe arreglo de tweets
 	 		elif value == "n":
 	 			palabras[word]["n"] = palabras[word]["n"] + 1   
 	 		else:
-	 			palabras[word]["-"] = palabras[word]["-"] + 1   
-	print (palabras["hola"])
+	 			palabras[word]["-"] = palabras[word]["-"] + 1  
+	with open("diccionario_valores.json", 'w') as file:
+		file.write(json.dumps(palabras))
 
 def leercsv(filename):
 	datos = []
