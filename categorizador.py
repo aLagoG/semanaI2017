@@ -20,7 +20,7 @@ tweets = Tweets.read_json_file("results_clean.json")
 
 customdictionary = read_file("diccionario_valores.json")
 bigdictionary = read_file("words_spain.json")
-palabras = bigdictionary.update(customdictionary)
+palabras = read_file("combined_dictionary.json")
 
 def categorizar(tweets): #recibe arreglo de tweets y un csv con los tweets id y su su valor; exporta un diccionario en json con las palabras y sus valores positivos o negativos 
 	tweetsandvalues = leercsv('tweetsvalues.csv');
@@ -120,6 +120,4 @@ def analizador(tweets):
 		print()
 
 
-#analizador(tweets)
-print(bigdictionary["amador"])
-print(customdictionary["amador"])
+analizador(tweets)
