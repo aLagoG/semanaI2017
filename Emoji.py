@@ -10,6 +10,9 @@ emoji_map = {}
 
 
 def generateMap():
+    """
+        Lee el archivo de la lista de emojis y genera un mapa con sus valores emocionales
+    """
     f = open('emojiList.csv', 'r')
     first = True
     reg = re.compile('^\d+$')
@@ -38,6 +41,9 @@ emojis = ["😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "☺",
 
 
 def analizeEmoji(input_list):
+    """
+        Toma una lista de emojis y regresa el analisis de sus valores emocionales
+    """
     values = {x: 0.0 for x in emociones}
     values['polaridad'] = 0.0
     if len(input_list) == 0:
@@ -52,6 +58,7 @@ def analizeEmoji(input_list):
 
 
 if __name__ == "__main__":
+    # si se llama desde linea de comandos permite analizar los emojis de un texto
     if len(ARGV) > 1:
         analize_string(ARGV[1])
     else:

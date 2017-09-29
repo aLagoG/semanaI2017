@@ -7,12 +7,18 @@ import string
 
 
 def read_file(filename):
+    """
+        Abre un archivo json de diccionario y lo convierte en un mapa de valores de polaridad
+    """
     with open(filename) as f:
         data = json.load(f)
     return data
 
 
 def methodMax(tweet, dictionary):
+    """
+        Analiza el texto de un tweet sumando el valor maximo de cada palabra y haciendo un promedio de polaridad
+    """
     words = tweet.text_clean.split()
     if len(words) == 0:
         return 0
@@ -30,6 +36,9 @@ def methodMax(tweet, dictionary):
 
 
 def methodAll(tweet, dictionary):
+    """
+        Analiza el texto de un tweet sumando positividad y negatividad de cada palabra y haciendo un promedio para la polaridad 
+    """
     words = tweet.text_clean.split()
     if len(words) == 0:
         return 0
@@ -44,6 +53,10 @@ def methodAll(tweet, dictionary):
 
 
 def methodComplement(tweet, dictionary):
+    """
+        Analiza el texto de un tweet sumando positividad y negatividad de cada palabra y haciendo un promedio para la polaridad
+        Para este metodo el mayor entre positividad y negatividad mantiene su valor y el otro se convierte en el complemento  
+    """
     words = tweet.text_clean.split()
     if len(words) == 0:
         return 0
@@ -62,15 +75,20 @@ def methodComplement(tweet, dictionary):
 
 
 def correct(a, b):
+    """
+        Decide si un tweet esta siendo clasificado correctamente (cuando se tiene una clasificacion manual)
+    """
     if (a > 0 and b > 0) or (a < 0 and b < 0):
-        return True
+        return abs(a - b) <= 0.8
     if a != 0 and 0 != b:
         return False
-    return abs(a - b) <= 0.25
+    return abs(a - b) < 0.20
 
 
 def analizeTweet(tweet):
-    # todo elegir metodo correcto y diccionario correcto
+    """
+        Analiza un tweet por completo usando el mejor metodo para texto con el mejor diccionario y agregando la informacion del analisis de los emojis
+    """
     text_polarity = methodComplement(
         tweet, read_file("replaced_dictionary.json"))
     emoji_info = analizeEmoji(tweet.emoji)
@@ -88,6 +106,9 @@ punctuationRegex = re.compile("[{}]".format(string.punctuation + ','))
 
 
 def cleanTweet(tweet):
+    """
+        Limpia el texto de un tweet y separa los emojis
+    """
     tweet.emoji = emojiRegex.findall(tweet.text)
     tweet.text_clean = whitespaceRegex.sub(
         ' ', unidecode(tweet.text)).lower()
@@ -99,13 +120,25 @@ def cleanTweet(tweet):
 
 
 if __name__ == '__main__':
-
+    # si se esta usando el archivo desde la linea de comandos hacer un analisis de los metodos y diccionarios
     data = read_json_file('650_completos.json')
+
+    weighted = {}
 
     dictionaries = [
         read_file("combined_dictionary.json"), read_file("replaced_dictionary.json"), read_file(
-            "average_dictionary.json"), read_file("our_dictionary.json"), read_file("nltk_dictionary.json")]
-    dictionary_names = ["Combined", "Replaced", "Average", "Ours", "Spain"]
+            "average_dictionary.json"), read_file("our_dictionary.json"), read_file("nltk_dictionary.json"), weighted]
+    dictionary_names = ["Combined", "Replaced",
+                        "Average", "Ours", "Spain", "Weighted Average"]
+
+    for key in dictionaries[1]:
+        weighted[key] = {}
+        for pol in ['p', '-', 'n']:
+            if key in dictionaries[4]:
+                weighted[key][pol] = (
+                    dictionaries[1][key][pol] * 3 + dictionaries[4][key][pol] * 2) / 5
+            else:
+                weighted[key][pol] = dictionaries[1][key][pol]
 
     methods = [methodMax, methodAll, methodComplement]
     method_names = ["Max", "All", "Complement"]

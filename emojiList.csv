@@ -114,7 +114,9 @@ flexed biceps:muscle:,💪,20,0,0,0,0,0,0,0,0
 middle finger:middle_finger:,🖕,0,0,0,0,0,0,0,0,100
 eyes:eyes:,👀,0,0,100,0,0,0,0,0,0
 woman facepalming:woman_facepalming:,🤦‍♀,0,0,0,0,100,100,0,80,0
+man facepalming:man_facepalming:,🤦‍♂,0,0,0,0,100,100,0,80,0
 man shrugging:man_shrugging:,🤷‍♂,0,0,0,100,0,0,0,0,0
+woman shrugging:woman_shrugging:,🤷‍♀,0,0,0,100,0,0,0,0,0
 person gesturing NO:person_gesturing_no:,🙅,0,0,0,0,0,100,0,0,0
 red heart:heart:,❤,90,100,0,0,0,0,0,0,0
 broken heart:broken_heart:,💔,0,0,0,0,0,0,0,100,0
