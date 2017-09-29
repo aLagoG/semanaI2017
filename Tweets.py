@@ -32,7 +32,7 @@ class Tweet:
             self.text_clean = data['text_clean']
         if 'polarity' in data:
             self.polarity = data['polarity']
-        
+
     def set_polarity(self, data):
         self.polarity = 1 if data == 'p' else -1 if data == 'n' else 0
 

@@ -1,9 +1,10 @@
 #!/usr/bin/env python
+
 import re
 
 emociones = ['alegria', 'amor', 'sorpresa', 'neutral',
              'verguenza', 'aversion', 'miedo', 'tristeza', 'colera']
-positividad = [1, 1, 1 / 3, 0, -1 / 3, -1 / 3, -2 / 3, -1, -1]
+polaridad = [1, 1, 1 / 3, 0, -1 / 3, -1 / 3, -2 / 3, -1, -1]
 
 emoji_map = {}
 
@@ -22,12 +23,12 @@ def generateMap():
         for idx, val in enumerate(cols[2:]):
             val = val.strip() if reg.match(val) else '0'
             values[emociones[idx]] = float(val) / 100
-        values['positividad'] = sum(
-            [values[emociones[i]] * positividad[i] for i in range(len(emociones))])
-        if values['positividad'] > 1:
-            values['positividad'] = 1
-        elif values['positividad'] < -1:
-            values['positividad'] = -1
+        values['polaridad'] = sum(
+            [values[emociones[i]] * polaridad[i] for i in range(len(emociones))])
+        if values['polaridad'] > 1:
+            values['polaridad'] = 1
+        elif values['polaridad'] < -1:
+            values['polaridad'] = -1
         emoji_map[emoji] = values
 
 
@@ -35,32 +36,19 @@ generateMap()
 emojis = ["😀", "😃", "😄", "😁", "😆", "😅", "😂", "🤣", "☺", "😊", "😇", "🙂", "🙃", "😉", "😌", "😍", "😘", "😗", "😙", "😖", "😫", "😩", "😤", "😠", "😡", "😶", "😐", "😑", "😯", "😦", "😧", "😮", "😲", "😵", "😳", "😱", "😨", "😰", "😢", "😥", "🤤", "😭", "😓", "😪", "😴", "🙄", "🤔", "🤥", "😬", "🤐", "🤢", "🤧", "😷", "🤒", "🤕", "😈", "👿", "😺", "😸", "😹", "👌", "👈", "👉",
           "👆", "👇", "☝", "✋", "🤚", "🖐", "🖖", "👋", "🤙", "💪", "🖕", "👀", "🤦‍♀", "🤷‍♂", "🤦‍♂", "🤷‍♀", "🙅", "❤", "💔", "🔥", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "🙌", "👏", "🙏", "👍", "👎", "👊", "✊", "✌", "🤘", "👈", "👉", "👌", "😸", "🤝", "🤛", "🤜", "😚", "😋", "😜", "😝", "😛", "🤑", "🤗", "🤓", "😎", "🤡", "🤠", "😏", "😒", "😞", "😔", "😟", "😕", "🙁", "☹", "😣"]
 
-regexString = "(" + "|".join(emojis) + ")"
-regex = re.compile(regexString)
 
-
-def analizeEmoji(ar):
+def analizeEmoji(input_list):
     values = {x: 0.0 for x in emociones}
-    values['positividad'] = 0.0
-    for emoji in ar:
+    values['polaridad'] = 0.0
+    if len(input_list) == 0:
+        return values
+    for emoji in input_list:
         # print(emoji + ": " + str(emoji_map[emoji]))
         for key in emoji_map[emoji]:
             values[key] += emoji_map[emoji][key]
-    values = {x: values[x] / len(ar) for x in values}
+    values = {x: values[x] / len(input_list) for x in values}
     # print("completo: " + str(values))
     return values
-
-
-def analize_string(steing):
-    values = {x: 0.0 for x in emociones}
-    values['positividad'] = 0.0
-    matches = regex.findall(line)
-    for emoji in matches:
-        print(emoji + ": " + str(emoji_map[emoji]))
-        for key in emoji_map[emoji]:
-            values[key] += emoji_map[emoji][key]
-    values = {x: values[x] / len(matches) for x in values}
-    print("completo: " + str(values))
 
 
 if __name__ == "__main__":
